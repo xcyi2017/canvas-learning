@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>Canvas学习</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="300"
+        style="border: 1px solid #aaa; display: block;margin: 50px auto;"></canvas>
+    <script type="text/javascript">
+        window.onload = function () {
+            var canvas = document.getElementById("canvas");
+            // canvas.width = 800;
+            // canvas.height = 600;
+            var context = canvas.getContext("2d");
+            //使用canvas绘制
+
+            context.beginPath();
+            context.moveTo(100, 100);
+            context.lineTo(200, 200);
+            context.lineTo(200, 100);
+            context.lineTo(100, 100);
+
+            // 设置填充
+            // context.fillStyle = "rgb(2, 100, 30)";
+            // context.fill(); 
+
+            // 设置外边框线条
+            context.lineWidth = 1; // 线条粗细
+            context.strokeStyle = "#005588"; // 设置线条颜色
+            context.stroke();
+            context.closePath();
+
+            context.beginPath();
+            context.moveTo(100, 50);
+            context.lineTo(50, 100);
+            context.strokeStyle = "black";
+            context.lineWidth = 3;
+            context.stroke();
+            context.closePath();
+
+            
+        }
+    </script>
+</body>
+
+</html>
