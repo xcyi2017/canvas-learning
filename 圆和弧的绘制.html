@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="utf-8">
+    <title>圆和弧的绘制</Canvas></title>
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="300"
+        style="border: 1px solid #aaa; display: block;margin: 50px auto;"></canvas>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var canvas = document.getElementById("canvas");
+            canvas.width = 800;
+            canvas.height = 800;
+            var context = canvas.getContext("2d");
+            //使用canvas绘制
+
+            
+            context.lineWidth = 5;
+            context.strokeStyle = "#005588";
+            for (var i =0; i < 10; ++i) {
+                context.beginPath();
+                context.arc(50+i*100, 60, 40, 0, 2*Math.PI*(i+1)/10); // 最后一个参数指定顺逆时针
+                context.closePath();
+                context.stroke();
+            }
+
+            context.fillStyle = "#005588";
+            for (var i =0; i < 10; ++ i) {
+                context.beginPath(); // 已经让canva知道重新规划路径
+                context.arc(50+i*100, 180, 40, 0, 2*Math.PI*(i+1)/10);
+                // 没有closePath 也不影响，对fill不影响
+                context.fill();
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
